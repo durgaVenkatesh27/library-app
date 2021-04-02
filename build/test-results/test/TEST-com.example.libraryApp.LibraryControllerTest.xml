@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.libraryApp.LibraryControllerTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-04-02T21:32:59" hostname="LAPTOP-2UALPAND" time="1.237">
+  <properties/>
+  <testcase name="testGetAllBooks()" classname="com.example.libraryApp.LibraryControllerTest" time="0.864"/>
+  <testcase name="successfullyAddABook()" classname="com.example.libraryApp.LibraryControllerTest" time="0.367"/>
+  <system-out><![CDATA[2021-04-02 22:32:56.979  INFO 12176 --- [    Test worker] .b.t.a.w.s.WebMvcTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.example.libraryApp.LibraryControllerTest], using SpringBootContextLoader
+2021-04-02 22:32:56.988  INFO 12176 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.example.libraryApp.LibraryControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2021-04-02 22:32:56.990  INFO 12176 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.libraryApp.LibraryControllerTest]: LibraryControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2021-04-02 22:32:57.042  INFO 12176 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.libraryApp.LibraryAppApplication for test class com.example.libraryApp.LibraryControllerTest
+2021-04-02 22:32:57.046  INFO 12176 --- [    Test worker] .b.t.a.w.s.WebMvcTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2021-04-02 22:32:57.047  INFO 12176 --- [    Test worker] .b.t.a.w.s.WebMvcTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@22d88490, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@537c16c6, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@3d3b9fa2, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@933a93b, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6f294089, org.springframework.test.context.transaction.TransactionalTestExecutionListener@5c50a18c, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@3d77f32b, org.springframework.test.context.event.EventPublishingTestExecutionListener@2919ffcf, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@c11df6d, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@551443a2, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@57780c80, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@31797627, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@33112dd2, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@44ef6141]
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.3.9.RELEASE)
+
+2021-04-02 22:32:57.189  INFO 12176 --- [    Test worker] c.e.libraryApp.LibraryControllerTest     : Starting LibraryControllerTest on LAPTOP-2UALPAND with PID 12176 (started by hema in C:\Users\hema\Downloads\libraryApp)
+2021-04-02 22:32:57.192  INFO 12176 --- [    Test worker] c.e.libraryApp.LibraryControllerTest     : The following profiles are active: test
+2021-04-02 22:32:59.073  INFO 12176 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-02 22:32:59.720  INFO 12176 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-04-02 22:32:59.720  INFO 12176 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-04-02 22:32:59.798  INFO 12176 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 78 ms
+2021-04-02 22:32:59.887  INFO 12176 --- [    Test worker] c.e.libraryApp.LibraryControllerTest     : Started LibraryControllerTest in 2.828 seconds (JVM running for 51.289)
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /viewBooks
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8"]
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = com.example.libraryApp.LibraryController
+           Method = com.example.libraryApp.LibraryController#getAllBooks()
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = [{"id":1,"bookTitle":"Nature is God","isAvailable":true},{"id":2,"bookTitle":"I am the God","isAvailable":true}]
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
