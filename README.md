@@ -1,2 +1,2 @@
-# library-app
-Library Management System Spring
+# book-app
+Book Management System Spring
