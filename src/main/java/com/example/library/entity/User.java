@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Entity
 public class User {
@@ -15,7 +16,7 @@ public class User {
     private String name;
     private String books;
 
-    public User(){
+    public User() {
 
     }
 
@@ -49,6 +50,7 @@ public class User {
     public void setName(String text) {
         this.name = text;
     }
+
     public String getBooks() {
         return books;
     }
@@ -57,9 +59,15 @@ public class User {
         this.books = books;
     }
 
-    public List<String> getBookList() {
-        if(this.getBooks() == null)
+    public List<Long> getBookList() {
+        if (this.getBooks() == null || this.getBooks().isEmpty())
             return Arrays.asList();
-        return Arrays.asList(this.getBooks().split(","));
+        return Arrays.asList(this.getBooks().split(",")).stream().map(s -> Long.parseLong(s.trim())).collect(Collectors.toList());
+    }
+
+    public void setBookList(List<Long> bookList) {
+        String bookNames = bookList.stream().map(String::valueOf)
+                .collect(Collectors.joining(","));
+        setBooks(bookNames);
     }
 }

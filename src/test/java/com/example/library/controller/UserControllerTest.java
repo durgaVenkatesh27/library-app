@@ -37,8 +37,8 @@ class UserControllerTest {
     @Test
     void testGetUsers() throws Exception {
         List<User> userList = new ArrayList<>();
-        userList.add(new User(1L,"UserA",""));
-        userList.add(new User(2L,"UserB",""));
+        userList.add(new User(1L,"UserA"));
+        userList.add(new User(2L,"UserB"));
         when(userService.findAll()).thenReturn(userList);
         mockMvc.perform(MockMvcRequestBuilders.get("/user/viewUsers")
                 .contentType(MediaType.APPLICATION_JSON)

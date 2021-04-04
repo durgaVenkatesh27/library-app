@@ -12,16 +12,17 @@ import java.util.List;
 @RestController
 @RequestMapping("/user")
 public class UserController {
-        @Autowired
-        private UserService userService;
+    @Autowired
+    private UserService userService;
 
-        @GetMapping("/viewUsers")
-        public ResponseEntity<List<User>> getAllBooks() {
-            return new ResponseEntity<>(userService.findAll(), HttpStatus.OK);
-        }
+    @GetMapping("/viewUsers")
+    public ResponseEntity<List<User>> getAllBooks() {
+        return new ResponseEntity<>(userService.findAll(), HttpStatus.OK);
+    }
 
-        @PostMapping("/addUser")
-        public  ResponseEntity<User> addUser(@RequestBody User user) {
-                return new ResponseEntity<>(userService.save(user), HttpStatus.CREATED);
-        }
+
+    @PostMapping("/addUser")
+    public ResponseEntity<User> addUser(@RequestBody User user) {
+        return new ResponseEntity<>(userService.save(user), HttpStatus.CREATED);
+    }
 }

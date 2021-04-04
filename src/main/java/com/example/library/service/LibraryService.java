@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class LibraryService {
@@ -21,5 +22,9 @@ public class LibraryService {
 
     public Book save(Book book) {
         return libraryRepository.save(book);
+    }
+
+    public Optional<Book> findById(Long bookId) {
+        return libraryRepository.findById(bookId);
     }
 }

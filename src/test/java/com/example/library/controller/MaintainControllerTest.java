@@ -46,11 +46,39 @@ class MaintainControllerTest {
         when(libraryService.findAll()).thenReturn(Arrays.asList(bookSample));
 
         MockHttpServletRequestBuilder builder =
-                MockMvcRequestBuilders.put("/maintain/borrowBook/1/1")
-                        .contentType(MediaType.APPLICATION_JSON_VALUE)
-                        .accept(MediaType.APPLICATION_JSON);
+                getBuilder("/maintain/borrowBook/1/1");
         this.mockMvc.perform(builder)
                 .andExpect(MockMvcResultMatchers.status()
                         .isOk());
+    }
+    @Test
+    void testReturnABook() throws Exception{
+        User addUser = new User(1L,"UserA");
+        when(userService.findById(anyLong())).thenReturn(Optional.of(addUser));
+        Book bookSample = new Book(1L,"Nature is God",true);
+        when(libraryService.findAll()).thenReturn(Arrays.asList(bookSample));
+
+        MockHttpServletRequestBuilder builder =
+                getBuilder("/maintain/returnBook/1/1");
+        this.mockMvc.perform(builder)
+                .andExpect(MockMvcResultMatchers.status()
+                        .isOk());
+    }
+    @Test
+    void testReturnAllBooks() throws Exception{
+        User addUser = new User(1L,"UserA");
+        when(userService.findById(anyLong())).thenReturn(Optional.of(addUser));
+        Book bookSample = new Book(1L,"Nature is God",true);
+        when(libraryService.findAll()).thenReturn(Arrays.asList(bookSample));
+
+        MockHttpServletRequestBuilder builder = getBuilder("/maintain/returnAllBooks/1");
+        this.mockMvc.perform(builder)
+                .andExpect(MockMvcResultMatchers.status()
+                        .isOk());
+    }
+    private MockHttpServletRequestBuilder getBuilder(String path){
+        return MockMvcRequestBuilders.put(path)
+                .contentType(MediaType.APPLICATION_JSON_VALUE)
+                .accept(MediaType.APPLICATION_JSON);
     }
 }

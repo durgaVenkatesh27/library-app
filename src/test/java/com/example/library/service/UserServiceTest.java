@@ -29,12 +29,12 @@ class UserServiceTest {
 
 
     @AfterEach
-    void tearDown(){
+    void tearDown() {
         userRepository.deleteAll();
     }
 
     @Test
-    void testGetAllUsers(){
+    void testGetAllUsers() {
         User userSample = new User("Todo Sample 1");
         userRepository.save(userSample);
         UserService userService = new UserService(userRepository);
@@ -47,7 +47,7 @@ class UserServiceTest {
     }
 
     @Test
-    void testGetAllUsersWithNoUsers(){
+    void testGetAllUsersWithNoUsers() {
         UserService userService = new UserService(userRepository);
         List<User> usersList = userService.findAll();
         assertEquals(0, usersList.size());
@@ -64,8 +64,8 @@ class UserServiceTest {
     }
 
     @Test
-    void testSingleUser(){
-        User userSample = new User(1L,"Todo Sample 1");
+    void testSingleUser() {
+        User userSample = new User(1L, "Todo Sample 1");
         userRepository.save(userSample);
         UserService userService = new UserService(userRepository);
 
